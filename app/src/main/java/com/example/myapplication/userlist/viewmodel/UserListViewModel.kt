@@ -9,6 +9,9 @@ import com.example.myapplication.userlist.model.Data
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 
+/**
+ * view model fetches the list of user from api
+ */
 class UserListViewModel(private val dispatcher: CoroutineDispatcher,
                         private val apiService: NetworkAPIService): BaseViewModel<ItemClickListener>(),LifecycleObserver {
 

@@ -3,6 +3,9 @@ package com.example.myapplication.base
 import androidx.lifecycle.ViewModel
 import java.lang.ref.WeakReference
 
+/**
+ * base view model
+ */
 open class BaseViewModel<N> : ViewModel() {
 
     private lateinit var mNavigator: WeakReference<N>

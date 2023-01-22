@@ -5,6 +5,9 @@ import com.example.myapplication.userlist.viewmodel.UserListViewModelFactory
 import dagger.Component
 import javax.inject.Singleton
 
+/**
+ * an interface with components
+ */
 @Singleton
 @Component(modules = [NetworkModule::class])
 interface NetworkComponent {

@@ -3,10 +3,13 @@ package com.example.myapplication.network
 import com.example.myapplication.login.model.LoginModel
 import com.example.myapplication.login.model.TokenModel
 import com.example.myapplication.userlist.model.RetroResult
-import com.example.myapplication.userlist.model.RetroResultUser
+import com.example.myapplication.userlist.model.User
 import retrofit2.Response
 import retrofit2.http.*
 
+/**
+ * api interface
+ */
 interface NetworkAPIService {
 
     @POST("/api/login")
@@ -16,5 +19,5 @@ interface NetworkAPIService {
     suspend fun fetchUsers(@Query("page") page :Int): Response<RetroResult>
 
     @GET("/api/users/{id}")
-    suspend fun fetchSelectedUsers(@Path("id") id : Int): Response<RetroResultUser>
+    suspend fun fetchSelectedUsers(@Path("id") id : Int): Response<User>
 }

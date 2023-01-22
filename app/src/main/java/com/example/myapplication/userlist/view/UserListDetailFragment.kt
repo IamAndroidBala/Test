@@ -18,6 +18,9 @@ import com.example.myapplication.userlist.viewmodel.UserListViewModelFactory
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * a fragment to show a user details
+ */
 class UserListDetailFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
@@ -51,7 +54,7 @@ class UserListDetailFragment : Fragment() {
 
         view.isFocusableInTouchMode = true
         view.requestFocus()
-        view.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        view.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_UP) {
                 (activity as UserListActivity).setActionBarTitle(getString(R.string.contact_list))
                 return@OnKeyListener false

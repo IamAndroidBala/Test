@@ -13,7 +13,9 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.myapplication.R
 
-
+/**
+ * user to bind image, name etc from xml using data binding
+ */
 object CustomViewBindings {
 
     @JvmStatic

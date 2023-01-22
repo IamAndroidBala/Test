@@ -7,6 +7,9 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityLoginBinding
 import com.example.myapplication.replaceFragmentWithNoHistory
 
+/**
+ * login activity with a fragment
+ */
 class LoginActivity : AppCompatActivity() {
 
     @VisibleForTesting

@@ -5,7 +5,7 @@ import com.example.myapplication.network.NetworkAPIService
 import com.example.myapplication.userlist.model.Ad
 import com.example.myapplication.userlist.model.Data
 import com.example.myapplication.userlist.model.RetroResult
-import com.example.myapplication.userlist.model.RetroResultUser
+import com.example.myapplication.userlist.model.User
 import com.mvvmcoroutine.retrofit.TestCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -40,7 +40,7 @@ class UserListViewModelTest {
     private  var loading: Boolean = false
     lateinit var listViewModel: UserListViewModel
     private lateinit var response: Response<RetroResult>
-    private lateinit var responseUser: Response<RetroResultUser>
+    private lateinit var responseUser: Response<User>
 
     @Before
     fun setUp(){
@@ -82,7 +82,7 @@ class UserListViewModelTest {
         val data = Data(2,"george.bluth@reqres.in","George","Bluth","https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg")
         val ad = Ad("http://statuscode.org/","StatusCode Weekly","A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.")
 
-        val retroResponse = RetroResultUser(data,ad)
+        val retroResponse = User(data,ad)
         responseUser = Response.success(retroResponse)
         listViewModel = UserListViewModel(testDispatcher,apiService)
         Mockito.`when`(apiService.fetchSelectedUsers(2)).thenReturn(responseUser)

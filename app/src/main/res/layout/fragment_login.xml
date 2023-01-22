@@ -64,6 +64,8 @@
             android:background="@drawable/rounded_edittext"
             android:gravity="center"
             android:text="@string/login"
+            android:minHeight="45dp"
+            android:onClick="@{()-> viewmodel.onClickLogin()}"
             android:fontFamily="@font/helvetica_neu_bold"
             android:textSize="@dimen/textHeading"
             app:layout_constraintEnd_toEndOf="parent"

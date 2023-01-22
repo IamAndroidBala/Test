@@ -11,17 +11,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentUserListBinding
 import com.example.myapplication.replaceFragment
 import com.example.myapplication.userlist.ItemClickListener
 import com.example.myapplication.userlist.model.Data
 import com.example.myapplication.userlist.viewmodel.UserListViewModel
 import com.example.myapplication.userlist.viewmodel.UserListViewModelFactory
+import com.example.myapplication.utils.CommonMethods
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * shows all user profile in recycler view
+ */
 class UserListFragment : Fragment(), ItemClickListener {
 
     private var param1: String? = null
@@ -53,6 +58,14 @@ class UserListFragment : Fragment(), ItemClickListener {
         userListViewModel.setNavigator(this)
         binding.setVariable(BR.viewModel, userListViewModel)
         initAdapter()
+
+        activity?.let {
+            if(!CommonMethods().internetCheck(it)){
+                CommonMethods().showToast(it, getString(R.string.no_internet))
+                return
+            }
+        }
+
         observeViewModel()
     }
 
@@ -80,6 +93,7 @@ class UserListFragment : Fragment(), ItemClickListener {
     }
 
     private fun observeViewModel() {
+
         userListViewModel.fetchUsersLiveData().observe(viewLifecycleOwner) {
             it?.let {
                 userListAdapter?.refreshAdapter(it)

@@ -7,6 +7,9 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityUserListBinding
 import com.example.myapplication.replaceFragmentWithNoHistory
 
+/**
+ * an activity with a fragment which contains list of users retrived from api
+ */
 class UserListActivity : AppCompatActivity() {
 
     @VisibleForTesting

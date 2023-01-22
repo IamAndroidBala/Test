@@ -14,7 +14,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
+/**
+ * a module with retrofit and http client , interceptor
+ */
 @Module
 class NetworkModule {
 

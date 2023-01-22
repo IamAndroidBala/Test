@@ -13,6 +13,9 @@ import com.example.myapplication.userlist.ItemClickListener
 import com.example.myapplication.userlist.model.Data
 import com.example.myapplication.userlist.viewmodel.UserListViewModel
 
+/**
+ * adapter to show list of users in recycler view
+ */
 class UserListAdapter(
     var users: ArrayList<Data>,
     var context: Context,
@@ -40,7 +43,7 @@ class UserListAdapter(
     inner  class UserViewHolder(view: ItemUserListBinding) : RecyclerView.ViewHolder(view.root){
         fun bind(viewModel: UserListViewModel){
             binding.setVariable(BR.viewModel, viewModel)
-            binding.setVariable(BR.position, position)
+            binding.setVariable(BR.position, bindingAdapterPosition)
             binding.executePendingBindings()
         }
     }
