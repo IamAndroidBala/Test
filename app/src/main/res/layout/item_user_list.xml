@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.userlist.viewmodel.UserListViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_layout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingStart="@dimen/common_padding"
+        android:paddingEnd="@dimen/common_padding"
+        android:layout_width="match_parent"
+        android:onClick="@{() -> viewModel.itemClicked(viewModel.getCurrentUser(position))}"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/userimage"
+            android:src="@drawable/ic_sync"
+            app:imageUrl="@{viewModel.getCurrentUser(position).avatar}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding"
+            android:fontFamily="@font/helvetica_neu_bold"
+            android:lines="2"
+            android:gravity="bottom"
+            android:textSize="@dimen/textHeading"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:name="@{viewModel.getCurrentUser(position).first_name + viewModel.getCurrentUser(position).last_name}" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lines="2"
+            android:gravity="top"
+            android:layout_marginStart="@dimen/common_padding"
+            app:email="@{viewModel.getCurrentUser(position).email}"
+            android:textSize="@dimen/textContent"
+            android:fontFamily="@font/helvetica_neu_light"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="my_value">16dp</dimen>
+    <dimen name="common_padding">16dp</dimen>
+
+    <dimen name="textHeading">18sp</dimen>
+    <dimen name="textContent">16sp</dimen>
+</resources>
