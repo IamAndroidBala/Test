@@ -29,7 +29,7 @@ object CustomViewBindings {
                     Glide.with(imageView).asBitmap().placeholder(R.drawable.ic_person)
                         .load(imageUrl).apply(RequestOptions.bitmapTransform(CircleCrop()))
                         .into(imageView)
-                } catch (e: Exception) { }
+                } catch (_: Exception) { }
             }
         } else {
             imageView.setTag(R.id.image_url, null)
