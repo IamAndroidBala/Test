@@ -6,6 +6,9 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.widget.Toast
 
+/**
+ * commonly used func for the app
+ */
 class CommonMethods {
 
     fun internetCheck(context: Context): Boolean {
