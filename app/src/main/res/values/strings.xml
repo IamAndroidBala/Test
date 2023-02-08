@@ -7,7 +7,7 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
-    <string name="userimage">userImage</string>
+    <string name="user_image">userImage</string>
     <string name="no_email_found">No email found</string>
     <string name="user_name">eve.holt@reqres.in</string>
     <string name="user_password">cityslicka</string>

@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.100"
         tools:src="@tools:sample/avatars"
         android:fontFamily="@font/helvetica_neu_light"
-        android:contentDescription="@string/userimage" />
+        android:contentDescription="@string/user_image" />
 
     <TextView
         android:id="@+id/tvFirstNameLabel"
